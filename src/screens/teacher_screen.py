@@ -136,7 +136,7 @@ def teacher_tab_take_attendance():
 
                             all_detected_ids.setdefault(student_id, []).append(f"Photo {idx+1}")
 
-                enrolled_res = supabase.table('subject_students').select("*, students(*)").eq('subject_id', selected_subject_id).executed()
+                enrolled_res = supabase.table('subject_students').select("*, students(*)").eq('subject_id', selected_subject_id).execute()
                 enrolled_students = enrolled_res.data
 
                 if not enrolled_students:
@@ -187,8 +187,8 @@ def teacher_tab_manage_subjects():
     if subjects:
         for sub in subjects:
             stats = [
-                ("👥", "Students", sub["total_students"]),
-                ("👩‍🏫", "Classes", sub["total_classes"]),
+                ("👥", "Total Students", sub["total_students"]),
+                ("👩‍🏫", "Total Classes", sub["total_classes"]),
             ]
 
             def share_btn():

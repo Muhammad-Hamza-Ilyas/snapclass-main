@@ -17,7 +17,8 @@ def subject_card(
         """
 
         for icon, label, value in stats:
-            html += f'<div style="background: #EB459E10; padding:5px 12px; border-radius:12px; font-size:0.9rem">{icon} <b>{value}</b> {label}</div>'
+            c = "#22c55e" if "student" in label.lower() else "#3b82f6"
+            html += f'<div style="background: {c}15; color: {c}; padding:5px 12px; border-radius:12px; font-size:0.9rem; font-weight:500;">{icon} <b>{value}</b> {label}</div>'
 
         html += "</div>"
     html += "</div>"
