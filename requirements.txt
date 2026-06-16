@@ -1,25 +1,14 @@
-
 streamlit
-
 numpy
 pandas
-
 scikit-learn
-
 face_recognition
-dlib
 dlib-bin
-
-supabase
 bcrypt
-
 segno
 pillow
-
 librosa
 resemblyzer
-
 supabase==2.4.0
 postgrest==0.16.5
-
-git+https://github.com/ageitgey/face_recognition_models
+face_recognition_models @ git+https://github.com/ageitgey/face_recognition_models.git
