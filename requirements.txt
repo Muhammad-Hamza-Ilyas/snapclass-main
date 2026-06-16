@@ -1,3 +1,4 @@
+# Fixed core dependencies for SnapClass
 streamlit
 numpy
 pandas
