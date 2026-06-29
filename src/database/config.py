@@ -1,18 +1,10 @@
 import streamlit as st
+from supabase import create_client, Client
 
-try:
-    import supabase
-    st.write("Supabase module:", supabase)
-    st.write("Supabase file:", getattr(supabase, "__file__", "No file"))
-    st.write("Supabase version:", getattr(supabase, "__version__", "Unknown"))
+SUPABASE_URL = st.secrets["SUPABASE_URL"]
+SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 
-    from supabase import create_client
-
-    supabase_client = create_client(
-        st.secrets["SUPABASE_URL"],
-        st.secrets["SUPABASE_KEY"]
-    )
-
-except Exception as e:
-    st.exception(e)
-    raise
+supabase: Client = create_client(
+    SUPABASE_URL,
+    SUPABASE_KEY
+)
